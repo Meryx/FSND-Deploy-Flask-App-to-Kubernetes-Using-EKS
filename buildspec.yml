@@ -4,8 +4,6 @@ version: 0.2
 env:
   parameter-store:         
     JWT_SECRET: JWT_SECRET
-    DOCKER_USER: DOCKERUSER
-    DOCKER_PASS: DOCKERPASS
 
 phases:
   install:
@@ -33,7 +31,7 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
         - echo $dockeruser
         - echo $dockerpass
-        - docker login -u $dockeruser -p $dockerpass
+        - docker login -u $DOCKERUSER -p $DOCKERPASS
   build:
     commands:
       - docker build --tag $REPOSITORY_URI:$TAG .
