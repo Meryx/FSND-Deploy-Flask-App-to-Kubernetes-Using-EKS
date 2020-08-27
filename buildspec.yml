@@ -30,6 +30,7 @@ phases:
         - sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY_URI:$TAG"'@' simple_jwt_api.yml
         - $(aws ecr get-login --no-include-email)
         - export KUBECONFIG=$HOME/.kube/config
+        - kubectl config view
         - echo $dockeruser
         - echo $dockerpass
         - docker login -u $DOCKERUSER -p $DOCKERPASS
