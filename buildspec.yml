@@ -4,8 +4,8 @@ version: 0.2
 env:
   parameter-store:         
     JWT_SECRET: JWT_SECRET
-    DOCKER_USER: dockeruser
-    DOCKER_PASS: dockerpass
+    DOCKER_USER: DOCKERUSER
+    DOCKER_PASS: DOCKERPASS
 
 phases:
   install:
